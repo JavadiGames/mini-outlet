@@ -3,7 +3,6 @@ import useStyles from "../styles/SidebarStyles";
 
 function SidebarContainer({ mobile, children }) {
    const theme = useTheme();
-   const classes = useStyles();
    return (
       <>
          {mobile ? (

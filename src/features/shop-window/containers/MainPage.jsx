@@ -20,8 +20,6 @@ const MainPage = () => {
    const error = useSelector(selectProductsError);
    const allProducts = useSelector(selectAllProducts);
 
-   const categories = ["all", "electronics", "jewelery", "men's clothing", "women's clothing"];
-
    let content;
 
    if (status === "loading") {
@@ -39,7 +37,7 @@ const MainPage = () => {
    }
    return (
       <Box sx={{ display: "flex", flexGrow: 1, overflow: "hidden" }}>
-         <CategorySidebar categories={categories} />
+         <CategorySidebar />
          {content}
       </Box>
    );

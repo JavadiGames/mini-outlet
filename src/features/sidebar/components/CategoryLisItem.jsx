@@ -1,17 +1,12 @@
 import React from "react";
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { CategoryTwoTone, LaptopTwoTone, DiamondTwoTone, Woman, Man } from "@mui/icons-material";
+import { CategoryTwoTone } from "@mui/icons-material";
+import { CATEGORY_ICONS } from "../../../shared/Constants";
+import useStyles from "../styles/SidebarStyles";
 
-const categoryIcons = {
-   all: CategoryTwoTone,
-   electronics: LaptopTwoTone,
-   jewelery: DiamondTwoTone,
-   "women's clothing": Woman,
-   "men's clothing": Man,
-};
-
-export default function CategoryListItem({ category, selectedCategory, onCategoryClick, classes, isMobile }) {
-   const Icon = categoryIcons[category] || CategoryTwoTone;
+export default function CategoryListItem({ category, selectedCategory, onCategoryClick, isMobile }) {
+   const Icon = CATEGORY_ICONS[category] || CategoryTwoTone;
+   const classes = useStyles();
 
    return (
       <ListItem className={classes?.listItem} sx={{ p: isMobile ? 0 : undefined }}>

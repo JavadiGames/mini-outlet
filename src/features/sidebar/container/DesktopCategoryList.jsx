@@ -1,18 +1,13 @@
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Collapse } from "@mui/material";
-import { CategoryTwoTone, LaptopTwoTone, DiamondTwoTone, Checkroom, ExpandLess, ExpandMore, Woman, Man } from "@mui/icons-material";
+import { Checkroom, ExpandLess, ExpandMore } from "@mui/icons-material";
 import CategoryListItem from "../components/CategoryLisItem";
+import { CATEGORIES } from "../../../shared/Constants";
+import useStyles from "../styles/SidebarStyles";
 
-const categoryIcons = {
-   all: CategoryTwoTone,
-   electronics: LaptopTwoTone,
-   jewelery: DiamondTwoTone,
-   "women's clothing": Woman,
-   "men's clothing": Man,
-};
-
-export default function DesktopCategoryList({ categories, selectedCategory, onCategoryClick, isClothingExpanded, toggleClothing, classes }) {
-   const clothingCategories = categories.filter((cat) => cat.includes("clothing"));
-   const nonClothingCategories = categories.filter((cat) => !cat.includes("clothing"));
+export default function DesktopCategoryList({ selectedCategory, onCategoryClick, isClothingExpanded, toggleClothing }) {
+   const clothingCategories = CATEGORIES.filter((cat) => cat.includes("clothing"));
+   const nonClothingCategories = CATEGORIES.filter((cat) => !cat.includes("clothing"));
+   const classes = useStyles();
 
    return (
       <List>
@@ -22,7 +17,6 @@ export default function DesktopCategoryList({ categories, selectedCategory, onCa
                category={category}
                selectedCategory={selectedCategory}
                onCategoryClick={onCategoryClick}
-               classes={classes}
                isMobile={false}
             />
          ))}
@@ -49,7 +43,6 @@ export default function DesktopCategoryList({ categories, selectedCategory, onCa
                      category={category}
                      selectedCategory={selectedCategory}
                      onCategoryClick={onCategoryClick}
-                     classes={classes}
                      isMobile={false}
                   />
                ))}

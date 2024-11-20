@@ -13,7 +13,9 @@ import useStyles from "../styles/SidebarStyles";
 import MobileCategoryList from "./MobileCategoryList";
 import DesktopCategoryList from "./DesktopCategoryList";
 
-export default function Categorysidebar({ categories }) {
+import { CATEGORIES } from "../../../shared/Constants";
+
+export default function CategorySidebar() {
    const [isClothingExpanded, setIsClothingExpanded] = useState(true);
 
    const dispatch = useDispatch();
@@ -25,8 +27,8 @@ export default function Categorysidebar({ categories }) {
 
    const handleCategoryClick = (category) => {
       let selectedCat = category.toLowerCase();
-      if (selectedCat === "men") selectedCat = categories[3];
-      if (selectedCat === "women") selectedCat = categories[4];
+      if (selectedCat === "men") selectedCat = CATEGORIES[3];
+      if (selectedCat === "women") selectedCat = CATEGORIES[4];
       dispatch(setSelectedCategory(selectedCat));
    };
 
@@ -38,10 +40,9 @@ export default function Categorysidebar({ categories }) {
       <SidebarContainer mobile={isMobile}>
          <SidebarTitle mobile={isMobile} />
          {isMobile ? (
-            <MobileCategoryList categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
+            <MobileCategoryList selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
          ) : (
             <DesktopCategoryList
-               categories={categories}
                selectedCategory={selectedCategory}
                onCategoryClick={handleCategoryClick}
                isClothingExpanded={isClothingExpanded}
