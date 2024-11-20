@@ -1,5 +1,4 @@
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { CategoryTwoTone, LaptopTwoTone, DiamondTwoTone, Woman, Man } from "@mui/icons-material";
+import { List } from "@mui/material";
 import CategoryListItem from "../components/CategoryLisItem";
 import { CATEGORIES } from "../../../shared/Constants";
 

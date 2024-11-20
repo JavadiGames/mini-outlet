@@ -1,4 +1,3 @@
-import React from "react";
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { CategoryTwoTone } from "@mui/icons-material";
 import { CATEGORY_ICONS } from "../../../shared/Constants";

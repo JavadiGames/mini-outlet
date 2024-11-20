@@ -1,5 +1,4 @@
 import { Box, useTheme } from "@mui/material";
-import useStyles from "../styles/SidebarStyles";
 
 function SidebarContainer({ mobile, children }) {
    const theme = useTheme();
