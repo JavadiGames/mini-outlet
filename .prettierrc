@@ -1,0 +1,12 @@
+{
+   "tabWidth": 3,
+   "useTabs": false,
+   "printWidth": 148,
+   "proseWrap": "preserve",
+   "endOfLine": "auto",
+   "htmlWhitespaceSensitivity": "ignore",
+   "embeddedLanguageFormatting": "off",
+   "jsxBracketSameLine": true,
+   "singleAttributePerLine": false,
+   "bracketSameLine": true,
+}
